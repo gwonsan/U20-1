@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>U20</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav>
+        <a class="logo" href="#" style="padding-left: 20px;">
+            <!--패딩 20px줌-->
+            <img src="img/logo.png" alt="Logo" class="logo_img" />
+        </a>
+        </div>
+    </nav>
+    <section class="something container">
+        <div class="left_menu">
+            <ul class="menu2">
+                <li>
+                    <a href="#" onclick="test(0)">참가자 관리</a>
+                    <ul class="sub_menu">
+                        <li><a href="#">심판 목록</a></li>
+                        <li><a href="#">임원 목록</a></li>
+                        <li><a href="#">코치 목록</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="test(1)">선수 관리</a>
+                    <ul class="sub_menu">
+                        <li><a href="#">선수 목록</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="test(2)">경기 관리</a>
+                    <ul class="sub_menu">
+                        <li><a href="#">경기 목록</a></li>
+                        <li><a href="#">국가 목록</a></li>
+                        <li><a href="#">일정 목록</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="test(3)">기록 관리</a>
+                    <ul class="sub_menu">
+                        <li><a href="#">경기결과 목록</a></li>
+                        <li><a href="#">역대기록 목록</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="test(4)">통계 관리</a>
+                    <ul class="sub_menu" style="display:block">
+                        <li><a onclick="test2(1)">선수별 순위보기</a></li>
+                        <li><a onclick="test2(2)">신기록 경기기록</a></li>
+                        <li><a onclick="test2(3)">경기별 순위보기</a></li>
+                        <li><a onclick="test2(4)">경기별 메달보기</a></li>
+                        <li><a onclick="test2(5)">국가별 순위보기</a></li>
+                    </ul>
+                </li>
+                <li onclick="test(5)">
+                    <a href="#">계정 관리</a>
+                    <ul class="sub_menu">
+                        <li><a href="#">마이페이지</a></li>
+                        <li><a href="#">비밀번호 변경</a></li>
+                        <li><a href="#">권한 변경</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        </div>
+        <div class="contents_wrap">
+            <!-- 선수별 순위보기 -->
+            <div class="item1">
+                <div class="selectWrap">
+                    <div class="selectArea float_r">
+                        <!-- 국가 선택 -->
+                        <div class="select_box mr10">
+                            <select class="d_select" title="국가" style="width: 150px;">
+                                <option value="" hidden>국가</option>
+                                <option value="1">대한민국</option>
+                                <option value="2">중국</option>
+                                <option value="3">일본</option>
+                            </select>
+                        </div>
+                        <!-- 종목 추후 앞에 순서 따라 보여주는 거 분류해야함  -->
+                        <div class="select_box mr10">
+                            <select class="d_select" title="종목" style="width: 172.667px;">
+                                <option value="" hidden>종목</option>
+                                <option value="" disabled>개인 싱글</option>
+                                <option value="2">90M</option>
+                                <option value="3">70M</option>
+                                <option value="4">60M</option>
+                                <option value="5">50M</option>
+                                <option value="6">30M</option>
+                                <option value="7" disabled>단체 싱글</option>
+                                <option value="8">개인 M(12)</option>
+                                <option value="9">개인 Q.R(72)</option>
+                                <option value="10">70M 단체</option>
+                                <option value="11">단체 M(24)</option>
+                                <option value="12">70M 혼성</option>
+                                <option value="13">개인M(15)</option>
+                                <option value="14">50M 단체</option>
+                                <option value="15">50M 혼성</option>
+                                <option value="16">M(16)혼성</option>
+                            </select>
+                        </div>
+                        <!-- 클릭 시 select 옵션 보내는 onclick 구현 예정 -->
+                        <a class="btn_search" href="#"><img src="img/btn_search.gif" alt="검색"></a>
+                    </div>
+                </div>
+                <div class="tbl_area">
+                    <table width="100%" cellspacing="0" cellpadding="0" class="tbl_t01">
+                        <colgroup>
+                            <col style="width: 10%;">
+                            <col style="width:15%;">
+                            <col style="width:25%;">
+                            <col style="width:20%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>순위</th>
+                                <th>국가</th>
+                                <th>이름</th>
+                                <th>출전 종목</th>
+                                <th>금</th>
+                                <th>은</th>
+                                <th>동</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>한국</td>
+                                <td>권 산</td>
+                                <td>100m, 400m, 1600m </td>
+                                <td>4</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>한국</td>
+                                <td>권 산</td>
+                                <td>100m, 400m, 1600m </td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>한국</td>
+                                <td>권 산</td>
+                                <td>100m, 400m, 1600m </td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>한국</td>
+                                <td>권 산</td>
+                                <td>100m, 400m, 1600m </td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>한국</td>
+                                <td>권 산</td>
+                                <td>100m, 400m, 1600m </td>
+                                <td>2</td>
+                                <td>4</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>한국</td>
+                                <td>권 산</td>
+                                <td>100m, 400m, 1600m </td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>한국</td>
+                                <td>권 산</td>
+                                <td>100m, 400m, 1600m </td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>한국</td>
+                                <td>권 산</td>
+                                <td>100m, 400m, 1600m </td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>한국</td>
+                                <td>권 산</td>
+                                <td>100m, 400m, 1600m </td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>한국</td>
+                                <td>권 산</td>
+                                <td>100m, 400m, 1600m </td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- 신기록 경기 기록 -->
+            <div class="item2">
+                <div class="selectWrap">
+                    <div class="selectArea float_r">
+                        <div class="select_box mr10">
+                            <select class="d_select" title="성별" style="width: 122px;">
+                                <option value="" hidden>성별</option>
+                                <option value="1">남</option>
+                                <option value="2">여</option>
+                            </select>
+                        </div>
+
+                        <div class="select_box mr10">
+                            <select class="d_select" title="구분" style="width: 172.667px;">
+                                <option value="" hidden>종목</option>
+                                <option value="1" disabled>개인 싱글</option>
+                                <option value="2">90M</option>
+                                <option value="3">70M</option>
+                                <option value="4">60M</option>
+                                <option value="5">50M</option>
+                                <option value="6">30M</option>
+                                <option value="7" disabled>단체 싱글</option>
+                                <option value="8">개인 M(12)</option>
+                                <option value="9">개인 Q.R(72)</option>
+                                <option value="10">70M 단체</option>
+                                <option value="11">단체 M(24)</option>
+                                <option value="12">70M 혼성</option>
+                                <option value="13">개인M(15)</option>
+                                <option value="14">50M 단체</option>
+                                <option value="15">50M 혼성</option>
+                                <option value="16">M(16)혼성</option>
+                            </select>
+                        </div>
+                        <a class="btn_search" href="#"><img src="img/btn_search.gif" alt="검색"></a>
+                    </div>
+                </div>
+                <div class="tbl_area">
+                    <table width="100%" cellspacing="0" cellpadding="0" class="tbl_t01">
+                        <colgroup>
+                            <col style="width:15%;">
+                            <col style="width:15%;">
+                            <col style="width:40%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>기록구분</th>
+                                <th>이름</th>
+                                <th>대회</th>
+                                <th>기록</th>
+                                <th>기록일자</th>
+                                <th>소속</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>올림픽대회</td>
+                                <td>정재헌</td>
+                                <td>제25회 바르셀로나 올림픽대회 (스페인)</td>
+                                <td>1329</td>
+                                <td>1992.08</td>
+                                <td>한국</td>
+                            </tr>
+                            <tr>
+                                <td>올림픽대회</td>
+                                <td>정재헌</td>
+                                <td>제25회 바르셀로나 올림픽대회 (스페인)</td>
+                                <td>1329</td>
+                                <td>1992.08</td>
+                                <td>한국</td>
+                            </tr>
+                            <tr>
+                                <td>올림픽대회</td>
+                                <td>정재헌</td>
+                                <td>제25회 바르셀로나 올림픽대회 (스페인)</td>
+                                <td>1329</td>
+                                <td>1992.08</td>
+                                <td>한국</td>
+                            </tr>
+                            <tr>
+                                <td>올림픽대회</td>
+                                <td>정재헌</td>
+                                <td>제25회 바르셀로나 올림픽대회 (스페인)</td>
+                                <td>1329</td>
+                                <td>1992.08</td>
+                                <td>한국</td>
+                            </tr>
+                            <tr>
+                                <td>세계선수권대회</td>
+                                <td>오진혁</td>
+                                <td>제45회 울산 세계선수권대회 (한국)</td>
+                                <td>1386</td>
+                                <td>2009.09</td>
+                                <td>한국</td>
+                            </tr>
+                            <tr>
+                                <td>아시아경기대회</td>
+                                <td>김우진</td>
+                                <td>제16회 광저우 아시아경기대회 (중국)</td>
+                                <td>1387</td>
+                                <td>2010.11</td>
+                                <td>한국</td>
+                            </tr>
+                            <tr>
+                                <td>아시아경기대회</td>
+                                <td>김우진</td>
+                                <td>제16회 광저우 아시아경기대회 (중국)</td>
+                                <td>1387</td>
+                                <td>2010.11</td>
+                                <td>한국</td>
+                            </tr>
+                            <tr>
+                                <td>아시아경기대회</td>
+                                <td>김우진</td>
+                                <td>제16회 광저우 아시아경기대회 (중국)</td>
+                                <td>1387</td>
+                                <td>2010.11</td>
+                                <td>한국</td>
+                            </tr>
+                            <tr>
+                                <td>아시아선수권대회</td>
+                                <td>황진우</td>
+                                <td>제11회 베이징 아시아선수권대회 (중국)</td>
+                                <td>1356</td>
+                                <td>1999.09</td>
+                                <td>한국</td>
+                            </tr>
+                            <tr>
+                                <td>아시아선수권대회</td>
+                                <td>황진우</td>
+                                <td>제11회 베이징 아시아선수권대회 (중국)</td>
+                                <td>1356</td>
+                                <td>1999.09</td>
+                                <td>한국</td>
+                            </tr>
+                            <tr>
+                                <td>아시아선수권대회</td>
+                                <td>황진우</td>
+                                <td>제11회 베이징 아시아선수권대회 (중국)</td>
+                                <td>1356</td>
+                                <td>1999.09</td>
+                                <td>한국</td>
+                            </tr>
+                            <tr>
+                                <td>아시아선수권대회</td>
+                                <td>황진우</td>
+                                <td>제11회 베이징 아시아선수권대회 (중국)</td>
+                                <td>1356</td>
+                                <td>1999.09</td>
+                                <td>한국</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 경기별 순위 보기 -->
+            <div class="item3">
+                <div class="selectWrap">
+                    <div class="selectArea float_r">
+                        <div class="select_box mr10">
+                            <select class="d_select" title="날짜" style="width: 172.667px;">
+                                <option value="1">날짜</option>
+                                <option value="2">2023-06-04</option>
+                                <option value="3">2023-06-05</option>
+                                <option value="4">2023-06-06</option>
+                                <option value="5">2023-06-07</option>
+                            </select>
+                        </div>
+
+                        <div class="select_box mr10">
+                            <select class="d_select" title="성별" style="width: 122px;">
+                                <option value="" hidden>성별</option>
+                                <option value="1">남</option>
+                                <option value="2">여</option>
+                            </select>
+                        </div>
+
+                        <div class="select_box mr10">
+                            <select class="d_select" title="구분" style="width: 172.667px;">
+                                <option value="" hidden>종목</option>
+                                <option value="1" disabled>개인 싱글</option>
+                                <option value="2">90M</option>
+                                <option value="3">70M</option>
+                                <option value="4">60M</option>
+                                <option value="5">50M</option>
+                                <option value="6">30M</option>
+                                <option value="7" disabled>단체 싱글</option>
+                                <option value="8">개인 M(12)</option>
+                                <option value="9">개인 Q.R(72)</option>
+                                <option value="10">70M 단체</option>
+                                <option value="11">단체 M(24)</option>
+                                <option value="12">70M 혼성</option>
+                                <option value="13">개인M(15)</option>
+                                <option value="14">50M 단체</option>
+                                <option value="15">50M 혼성</option>
+                                <option value="16">M(16)혼성</option>
+                            </select>
+                        </div>
+
+                        <a class="btn_search" href="#"><img src="img/btn_search.gif" alt="검색"></a>
+                    </div>
+                </div>
+                <!-- select 선택에 따른 종목 결과 나열 -->
+                <div class="tbl_area">
+                    <table width="100%" cellspacing="0" cellpadding="0" class="tbl_t01">
+                        <colgroup>
+                            <col style="width:10%;">
+                            <col style="width:15%;">
+                            <col style="width:25%;">
+                            <col style="width:25%;">
+                            <col style="width:25%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>등수</th>
+                                <th>국가</th>
+                                <th>이름</th>
+                                <th>결과</th>
+                                <th>비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>KOR</td>
+                                <td>MinJi Kim</td>
+                                <td>0:10:12</td>
+                                <td>World Record</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>JPN</td>
+                                <td>Yoshitaku Nagasako</td>
+                                <td>0:10:46</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>KAZ</td>
+                                <td>Elena Potapenko</td>
+                                <td>0:10:95</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>CHN</td>
+                                <td>Mingyu Zhang</td>
+                                <td>0:11:26</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>UZB</td>
+                                <td>Alise Fakhrutdinova</td>
+                                <td>0:11:49</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>MGL</td>
+                                <td>Tsogtbaatar Tsend-Ochir</td>
+                                <td>0:12:46</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>KSA</td>
+                                <td>Sulaiman Hamad</td>
+                                <td>0:12:75</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>SRI</td>
+                                <td>Chamara Repiyallage</td>
+                                <td>0:00:00</td>
+                                <td>Disqualified</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 경기별 메달 보기 -->
+            <div class="item4">
+                <div class="selectWrap">
+                    <div class="selectArea float_r">
+                        <div class="select_box mr10">
+                            <select class="d_select" title="성별" style="width: 122px;">
+                                <option value="" hidden>성별</option>
+                                <option value="1">남</option>
+                                <option value="2">여</option>
+                            </select>
+                        </div>
+
+                        <div class="select_box mr10">
+                            <select class="d_select" title="구분" style="width: 172.667px;">
+                                <option value="" hidden>종목</option>
+                                <option value="1" disabled>개인 싱글</option>
+                                <option value="2">90M</option>
+                                <option value="3">70M</option>
+                                <option value="4">60M</option>
+                                <option value="5">50M</option>
+                                <option value="6">30M</option>
+                                <option value="7" disabled>단체 싱글</option>
+                                <option value="8">개인 M(12)</option>
+                                <option value="9">개인 Q.R(72)</option>
+                                <option value="10">70M 단체</option>
+                                <option value="11">단체 M(24)</option>
+                                <option value="12">70M 혼성</option>
+                                <option value="13">개인M(15)</option>
+                                <option value="14">50M 단체</option>
+                                <option value="15">50M 혼성</option>
+                                <option value="16">M(16)혼성</option>
+                            </select>
+                        </div>
+                        <a class="btn_search" href="#"><img src="img/btn_search.gif" alt="검색"></a>
+                    </div>
+                </div>
+                <div class="tbl_area">
+                    <table width="100%" cellspacing="0" cellpadding="0" class="tbl_t01">
+                        <colgroup>
+                            <col style="width:20%;">
+                            <col style="width:16%;">
+                            <col style="width:10%;">
+                            <col style="width:16%;">
+                            <col style="width:10%;">
+                            <col style="width:16%;">
+                            <col style="width:10%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>경기</th>
+                                <th>금</th>
+                                <th>기록</th>
+                                <th>은</th>
+                                <th>기록</th>
+                                <th>동</th>
+                                <th>기록</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>빨리 먹기</td>
+                                <td>김민지</td>
+                                <td>0:10:23</td>
+                                <td>임지훈</td>
+                                <td>0:10:463</td>
+                                <td>권산</td>
+                                <td>0:10:953</td>
+                            </tr>
+                            <tr>
+                                <td>100m</td>
+                                <td>이준원</td>
+                                <td>0:10:23</td>
+                                <td>천효민</td>
+                                <td>0:10:463</td>
+                                <td>임지훈</td>
+                                <td>0:10:953</td>
+                            </tr>
+                            <tr>
+                                <td>400m</td>
+                                <td>Suchart Chairsuvaparb</td>
+                                <td>0:46:23</td>
+                                <td>Yahya Saeed Al-Gahes</td>
+                                <td>0:46:463</td>
+                                <td>권산</td>
+                                <td>0:47:953</td>
+                            </tr>
+                            <tr>
+                                <td>멀리뛰기</td>
+                                <td>권예지</td>
+                                <td>7.61m</td>
+                                <td>김아현</td>
+                                <td>7.69m</td>
+                                <td>릔사오민</td>
+                                <td>7.76m</td>
+                            </tr>
+                            <tr>
+                                <td>1600m</td>
+                                <td>이정민</td>
+                                <td>0:10:23</td>
+                                <td>강하영</td>
+                                <td>0:10:463</td>
+                                <td>김채원</td>
+                                <td>0:10:953</td>
+                            </tr>
+                            <tr>
+                                <td>빨리 먹기</td>
+                                <td>김민지</td>
+                                <td>0:10:23</td>
+                                <td>임지훈</td>
+                                <td>0:10:463</td>
+                                <td>권산</td>
+                                <td>0:10:953</td>
+                            </tr>
+                            <tr>
+                                <td>빨리 먹기</td>
+                                <td>김민지</td>
+                                <td>0:10:23</td>
+                                <td>임지훈</td>
+                                <td>0:10:463</td>
+                                <td>권산</td>
+                                <td>0:10:953</td>
+                            </tr>
+                            <tr>
+                                <td>빨리 먹기</td>
+                                <td>김민지</td>
+                                <td>0:10:23</td>
+                                <td>임지훈</td>
+                                <td>0:10:463</td>
+                                <td>권산</td>
+                                <td>0:10:953</td>
+                            </tr>
+                            <tr>
+                                <td>빨리 먹기</td>
+                                <td>김민지</td>
+                                <td>0:10:23</td>
+                                <td>임지훈</td>
+                                <td>0:10:463</td>
+                                <td>권산</td>
+                                <td>0:10:953</td>
+                            </tr>
+                            <tr>
+                                <td>빨리 먹기</td>
+                                <td>김민지</td>
+                                <td>0:10:23</td>
+                                <td>임지훈</td>
+                                <td>0:10:463</td>
+                                <td>권산</td>
+                                <td>0:10:953</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- 국가별 순위 보기 -->
+            <div class="item5">
+                <div class="selectWrap">
+                    <div class="selectArea float_r">
+                        <div class="text_box mr10">
+                            <input type="text" class="area" placeholder="Find Country">
+                        </div>
+
+                        <a class="btn_search" href="#"><img src="img/btn_search.gif" alt="검색"></a>
+                    </div>
+                </div>
+                <!-- select 선택에 따른 종목 결과 나열 -->
+                <div class="tbl_area">
+                    <table width="100%" cellspacing="0" cellpadding="0" class="tbl_t02">
+                        <colgroup>
+                            <col style="width:50%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>국가</th>
+                                <th>금</th>
+                                <th>은</th>
+                                <th>동</th>
+                                <th>합계</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="/img/kr.jpg">대한민국</td>
+                                <td>12</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/img/ir.jpg">이란</td>
+                                <td>12</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/img/jp.jpg">일본</td>
+                                <td>12</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/img/kz.jpg">카자하스탄</td>
+                                <td>12</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/img/mn.jpg">몽골</td>
+                                <td>12</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/img/in.jpg">인도</td>
+                                <td>12</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/img/kr.jpg">대한민국</td>
+                                <td>12</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/img/kr.jpg">대한민국</td>
+                                <td>12</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/img/kr.jpg">대한민국</td>
+                                <td>12</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/img/kr.jpg">대한민국</td>
+                                <td>12</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>24</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="board_page">
+                <a href="#" class="bt first">&lt;&lt;</a>
+                <a href="#" class="bt prev">&lt;</a>
+                <a href="#" class="num on">1</a>
+                <a href="#" class="num">2</a>
+                <a href="#" class="num">3</a>
+                <a href="#" class="num">4</a>
+                <a href="#" class="num">5</a>
+                <a href="#" class="bt next">&gt;</a>
+                <a href="#" class="bt last">&gt;&gt;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <p class="footer_text">
+            Copyright © 2022, 20th Asian U20 Athletics Championships
+            Yecheon. All rights reserved.
+        </p>
+    </footer>
+</body>
+
+</html>
